@@ -73,11 +73,40 @@
         result = 'Error! Something went wrong.';
         
       }
+      //return result;
       console.log(result)
-      document.body.append(result); // instead of document.write.(result);
+      document.body.append('\n ... ', result); // instead of document.write.(result);
     }
 
-    playRound(humanPlay(), computerPlay())
+    
+    // Function 'game()' - plays 5 round game:
+    function game() {
+        playRound(humanPlay(), computerPlay());
+            if (humanPlay)
+        
+        playRound(humanPlay(), computerPlay());
+        playRound(humanPlay(), computerPlay());
+        playRound(humanPlay(), computerPlay());
+        playRound(humanPlay(), computerPlay());
+
+    }
+
+    //playRound(humanPlay(), computerPlay());
+    playerScore = 0;
+    computerScore = 0;
+
+    //function gameScore() { 
+        //let gScore = playRound;
+
+        //for (i=0; i<=5; i++) {
+            //if (gScore === )
+        //}
+
+    //}
+
+
+    game();
+
 
     </script>
 </body>
