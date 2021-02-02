@@ -6,94 +6,78 @@
 </head>
 <body>
     <script>
-        // JS goes here:    
+             // Function that randomly returns 'rock', 'paper', or 'scissors':
+    function computerPlay(compOutcome) {
+      var compOutcome;
+      x = Math.random();
+      if (x > 0 && x <= 0.33) {
+        compOutcome = 'rock';
+      } else if (x > 0.33 && x <= 0.66) {
+        compOutcome = 'paper';
+      } else {
+        compOutcome = 'scissors';
+      }
+      return compOutcome;
+      //document.write(humanOutcome);
+    }
 
-    
-        // Function that randomly returns 'rock', 'paper', or 'scissors':
-        function computerPlay() {
-            var compOutcome;
-            x = Math.random();    
-            if (x > 0 && x <= 0.33 ) {
-            compOutcome = 'Rock';
-        } 
-            else if (x > 0.33 && x <= 0.66) {
-            compOutcome = 'Paper';
-        }
-            else {
-            compOutcome = 'Scissors';
-        }
-            return compOutcome;
-        }
-  
-        // Functions - parameters for singleRound:
-        function humanPlay() {
-            var humanOutcome = prompt("Enter 'rock', 'paper', or 'scissors':");
-            
-            if (humanOutcome != toLowerCase()) {
-                for (i=0; i<=humanOutcome.length; i++) {
-                    humanOutcome.charAt[0] == str.toLowerCase();
-                }
-            } 
-            return humanOutcome;
-        }
+    // Functions - parameters for singleRound:
+    testLowercase = 'lowercase';
 
-        // Functions -> Variables for manipulation:
-        computerSelection = computerPlay;
-        playerSelection = humanPlay;
+    function humanPlay(humanOutcome) {
+      var humanOutcome = prompt("Enter 'rock', 'paper', or 'scissors':").toLowerCase();
 
-        // Function that plays a single round of Rock Paper Scissors:
-        function singleRound(playerSelection, computerSelection) {
-            // rock:
-            if (playerSelection == 'rock' && computerSelection == 'rock') {
-                stringRock1 = 'Tie! You both chose rock.';
-                return stringRock1;
-            }
-            else if (playerSelection == 'rock' && computerSelection == 'scissors') {
-                stringRock2 = 'Player wins! Computer chose scissors.';
-                return stringRock2;
-            }
-            else if (playerSelection == 'rock' && computerSelection == 'paper') {
-                stringRock3 = 'Computer wins! Computer chose paper.';
-                return stringRock3;
-            }
-            // paper:
-            else if (playerSelection == 'paper' && computerSelection == 'rock') {
-                stringPaper1 = 'Player wins! Computer chose rock.';
-                return stringPaper1;
-            }
-            else if (playerSelection == 'paper' && computerSelection == 'scissors') {
-                stringPaper2 = 'Computer wins! Computer chose scissors.';
-                return stringPaper2;
-            }
-            else if (playerSelection == 'paper' && computerSelection == 'paper') {
-                stringPaper3 = 'Tie! You both chose paper.';
-                return stringPaper3;
-            }
-            // scissors:
-            else if (playerSelection == 'scissors' && computerSelection == 'rock') {
-                stringScissors1 = 'Computer wins! Computer chose rock.';
-                return stringScissors1;
-            }
-            else if (playerSelection == 'scissors' && computerSelection == 'scissors') {
-                stringScissors2 = 'Tie! You both chose scissors.';
-                return stringScissors2;
-            }
-            else if (playerSelection == 'scissors' && computerSelection == 'paper') {
-                stringScissors3 = 'Player wins! Computer chose paper.';
-                return stringScissors3;
-            }
-            else {
-                stringError = 'Error! Something went wrong.';
-                return stringError;
-            }
-        }
+      return humanOutcome;
+      //document.write(humanOutcome);
+    }
 
-        computerPlay();
-        humanPlay();
-        singleRound();  
+    // Functions -> Variables for manipulation:
+    //computerSelection = computerPlay;
+    //playerSelection = humanPlay;
 
-        console.log(computerSelection());
-        console.log(playerSelection());
+    // Function that plays a single round of Rock Paper Scissors:
+    function playRound(humanPlay, computerPlay) {
+      // rock:
+      if (humanPlay == 'rock' && computerPlay == 'rock') {
+        result = 'Tie! You both chose rock.';
+
+      } else if (humanPlay == 'rock' && computerPlay == 'scissors') {
+        result = 'Player wins! Computer chose scissors.';
+        
+      } else if (humanPlay == 'rock' && computerPlay == 'paper') {
+        result = 'Computer wins! Computer chose paper.';
+        
+      }
+      // paper:
+      else if (humanPlay == 'paper' && computerPlay == 'rock') {
+        result = 'Player wins! Computer chose rock.';
+        
+      } else if (humanPlay == 'paper' && computerPlay == 'scissors') {
+        result = 'Computer wins! Computer chose scissors.';
+        
+      } else if (humanPlay == 'paper' && computerPlay == 'paper') {
+        result = 'Tie! You both chose paper.';
+        
+      }
+      // scissors:
+      else if (humanPlay == 'scissors' && computerPlay == 'rock') {
+        result = 'Computer wins! Computer chose rock.';
+        
+      } else if (humanPlay == 'scissors' && computerPlay == 'scissors') {
+        result = 'Tie! You both chose scissors.';
+        
+      } else if (humanPlay == 'scissors' && computerPlay == 'paper') {
+        result = 'Player wins! Computer chose paper.';
+        
+      } else {
+        result = 'Error! Something went wrong.';
+        
+      }
+      console.log(result)
+      document.body.append(result); // instead of document.write.(result);
+    }
+
+    playRound(humanPlay(), computerPlay())
 
     </script>
 </body>

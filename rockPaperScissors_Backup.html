@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rock, Paper, Scissors</title>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+    <script>
+        // JS goes here:    
+
+    
+        // Function that randomly returns 'rock', 'paper', or 'scissors':
+        function computerPlay() {
+            var compOutcome;
+            x = Math.random();    
+            if (x > 0 && x <= 0.33 ) {
+            compOutcome = 'rock';
+        } 
+            else if (x > 0.33 && x <= 0.66) {
+            compOutcome = 'paper';
+        }
+            else {
+            compOutcome = 'scissors';
+        }
+            return compOutcome;
+            //document.write(humanOutcome);
+        }
+  
+        // Functions - parameters for singleRound:
+        testLowercase = 'lowercase';
+
+        function humanPlay() {
+            var humanOutcome = prompt("Enter 'rock', 'paper', or 'scissors':").toLowerCase();
+            
+            return humanOutcome;
+            //document.write(humanOutcome);
+        }
+
+        // Functions -> Variables for manipulation:
+        //computerSelection = computerPlay;
+        //playerSelection = humanPlay;
+
+        // Function that plays a single round of Rock Paper Scissors:
+        function playRound(humanPlay, computerPlay) {
+            // rock:
+            if (humanPlay == 'rock' && computerPlay == 'rock') {
+                result = 'Tie! You both chose rock.';
+                //stringRock1 = 'Tie! You both chose rock.';
+                //return stringRock1;
+            }
+            else if (humanPlay == 'rock' && computerPlay == 'scissors') {
+                result = 'Player wins! Computer chose scissors.';
+                //stringRock2 = 'Player wins! Computer chose scissors.';
+                //return stringRock2;
+            }
+            else if (humanPlay == 'rock' && computerPlay == 'paper') {
+                result = 'Computer wins! Computer chose paper.';
+                //stringRock3 = 'Computer wins! Computer chose paper.';
+                //return stringRock3;
+            }
+            // paper:
+            else if (humanPlay == 'paper' && computerPlay == 'rock') {
+                result = 'Player wins! Computer chose rock.';
+                //stringPaper1 = 'Player wins! Computer chose rock.';
+                //return stringPaper1;
+            }
+            else if (humanPlay == 'paper' && computerPlay == 'scissors') {
+                result = 'Computer wins! Computer chose scissors.';
+                //stringPaper2 = 'Computer wins! Computer chose scissors.';
+                //return stringPaper2;
+            }
+            else if (humanPlay == 'paper' && computerPlay == 'paper') {
+                result = 'Tie! You both chose paper.';
+                //stringPaper3 = 'Tie! You both chose paper.';
+                //return stringPaper3;
+            }
+            // scissors:
+            else if (humanPlay == 'scissors' && computerPlay == 'rock') {
+                result = 'Computer wins! Computer chose rock.';
+                //stringScissors1 = 'Computer wins! Computer chose rock.';
+                //return stringScissors1;
+            }
+            else if (humanPlay == 'scissors' && computerPlay == 'scissors') {
+                result = 'Tie! You both chose scissors.';
+                //stringScissors2 = 'Tie! You both chose scissors.';
+                //return stringScissors2;
+            }
+            else if (humanPlay == 'scissors' && computerPlay == 'paper') {
+                result = 'Player wins! Computer chose paper.';
+                //stringScissors3 = 'Player wins! Computer chose paper.';
+                //return stringScissors3;
+            }
+            else {
+                result = 'Error! Something went wrong.';
+                //stringError = 'Error! Something went wrong.';
+                //return stringError;
+            }
+            return result;
+            //document.write(result);
+        }
+
+        computerPlay();
+        humanPlay();
+
+        playRound();  
+
+        console.log(computerPlay);
+        console.log(humanPlay);
+
+        console.log(playRound(humanPlay, computerPlay));
+
+    </script>
+</body>
+</html>
